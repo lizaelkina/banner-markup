@@ -78,7 +78,13 @@ img {
 }
 
 .slide:nth-child(3) .content {
+  padding: 28px 32px 0 36px;
   background-image: url("images/slide-3.png");
+}
+
+.slide:nth-child(4) .content {
+  padding: 70px 56px 0 35px;
+  background-image: url("images/slide-4.png");
 }
 
 .svg {
@@ -100,8 +106,18 @@ img {
   height: 425px;
 }
 
+.slide:nth-child(3) .svg {
+  width: 27px;
+  height: 482px;
+}
+
+.slide:nth-child(4) .svg {
+  width: 48px;
+  height: 448px;
+}
+
 .slide._showing .svg {
-  animation: visibility 5s linear forwards;
+  animation: visibility 4s linear forwards;
 }
 
 .title {
@@ -125,6 +141,11 @@ img {
   font-size: 13px;
 }
 
+.slide:nth-child(3) .title {
+  margin-bottom: 40px;
+  font-size: 10px;
+}
+
 .text {
   font-weight: 700;
   font-size: 6px;
@@ -143,6 +164,25 @@ img {
   position: absolute;
   top: 43%;
   left: 57%;
+}
+
+.slide:nth-child(3) .text {
+  max-width: 210px;
+}
+
+.slide:nth-child(4) .text {
+  margin-top: 306px;
+  margin-left: 70px;
+}
+
+.title-text {
+  margin-top: 258px;
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 158%;
+  letter-spacing: .1em;
+  color: #fff;
 }
 
 .hieroglyphs {
@@ -175,6 +215,31 @@ img {
   line-height: 100%;
 }
 
+.slide:nth-child(3) .hieroglyphs {
+  justify-content: end;
+  grid-template-columns:repeat(9, fit-content(100%));
+  grid-template-rows:repeat(7, 1fr);
+  align-items: center;
+  justify-items: start;
+  column-gap: 19px;
+  row-gap: 15px;
+  font-weight: 400;
+  font-size: 4px;
+  line-height: 100%;
+}
+
+.slide:nth-child(4) .hieroglyphs {
+  grid-template-columns:repeat(8, fit-content(100%));
+  grid-template-rows:repeat(4, 1fr);
+  align-items: center;
+  justify-items: start;
+  column-gap: 20px;
+  row-gap: 15px;
+  font-weight: 400;
+  font-size: 6px;
+  line-height: 100%;
+}
+
 .hieroglyphs-big {
   margin: 35px 0 230px;
   width: fit-content;
@@ -191,7 +256,7 @@ img {
 @keyframes pulsate {
   50% {
     color: #fff;
-    text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+    text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 7px #ffd, 0 0 10px #fff;
   }
 }
 
