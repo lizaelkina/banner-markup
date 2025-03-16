@@ -44,8 +44,17 @@ img {
 }
 
 .slide {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.slide._showing {
+  visibility: visible;
+  opacity: 1;
 }
 
 .content {
@@ -64,6 +73,7 @@ img {
 }
 
 .slide:nth-child(2) .content {
+  padding: 34px 37px 36px;
   background-image: url("images/slide-2.png");
 }
 
@@ -72,20 +82,30 @@ img {
 }
 
 .svg {
-  width: 41px;
-  height: 436px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   visibility: hidden;
   opacity: 0;
-  animation: visibility 3s linear forwards;
+}
+
+.slide:nth-child(1) .svg {
+  width: 41px;
+  height: 436px;
+}
+
+.slide:nth-child(2) .svg {
+  width: 27px;
+  height: 425px;
+}
+
+.slide._showing .svg {
+  animation: visibility 5s linear forwards;
 }
 
 .title {
   font-weight: 700;
-  font-size: 16px;
   line-height: 158%;
   letter-spacing: .6em;
   text-transform: uppercase;
@@ -97,10 +117,15 @@ img {
 
 .slide:nth-child(1) .title {
   margin-bottom: 70px;
+  font-size: 16px;
+}
+
+.slide:nth-child(2) .title {
+  margin-top: 57px;
+  font-size: 13px;
 }
 
 .text {
-  max-width: 200px;
   font-weight: 700;
   font-size: 6px;
   line-height: 158%;
@@ -109,11 +134,24 @@ img {
 }
 
 .slide:nth-child(1) .text {
+  max-width: 200px;
   margin-bottom: 160px;
+}
+
+.slide:nth-child(2) .text {
+  max-width: 150px;
+  position: absolute;
+  top: 43%;
+  left: 57%;
 }
 
 .hieroglyphs {
   display: grid;
+  color: #fff;
+  animation: pulsate 1.2s linear infinite;
+}
+
+.slide:nth-child(1) .hieroglyphs {
   grid-template-columns:repeat(9, 1fr);
   grid-template-rows:repeat(5, 1fr);
   align-items: center;
@@ -122,6 +160,29 @@ img {
   row-gap: 30px;
   font-weight: 400;
   font-size: 10px;
+  line-height: 100%;
+}
+
+.slide:nth-child(2) .hieroglyphs {
+  grid-template-columns:repeat(8, fit-content(100%));
+  grid-template-rows:repeat(5, 1fr);
+  align-items: center;
+  justify-items: start;
+  column-gap: 19px;
+  row-gap: 15px;
+  font-weight: 400;
+  font-size: 4px;
+  line-height: 100%;
+}
+
+.hieroglyphs-big {
+  margin: 35px 0 230px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 100%;
   color: #fff;
   animation: pulsate 1.2s linear infinite;
