@@ -1,0 +1,146 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Inter-Regular.woff2?v=3.19") format("woff2"), url("fonts/Inter-Regular.woff?v=3.19") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/Inter-Bold.woff2?v=3.19") format("woff2"), url("fonts/Inter-Bold.woff?v=3.19") format("woff");
+}
+
+* {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  animation: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 337px;
+  height: 600px;
+  background: #141617;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide:nth-child(1) .content {
+  padding: 34px 14px 0;
+  background-image: url("images/slide-1.png");
+}
+
+.slide:nth-child(2) .content {
+  background-image: url("images/slide-2.png");
+}
+
+.slide:nth-child(3) .content {
+  background-image: url("images/slide-3.png");
+}
+
+.svg {
+  width: 41px;
+  height: 436px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+  animation: visibility 3s linear forwards;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 158%;
+  letter-spacing: .6em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgb(245, 245, 245);
+  text-shadow: 0 -1px rgba(0, 0, 0, .1);
+  animation: pulsate 1.2s linear infinite;
+}
+
+.slide:nth-child(1) .title {
+  margin-bottom: 70px;
+}
+
+.text {
+  max-width: 200px;
+  font-weight: 700;
+  font-size: 6px;
+  line-height: 158%;
+  letter-spacing: .2rem;
+  color: #fff;
+}
+
+.slide:nth-child(1) .text {
+  margin-bottom: 160px;
+}
+
+.hieroglyphs {
+  display: grid;
+  grid-template-columns:repeat(9, 1fr);
+  grid-template-rows:repeat(5, 1fr);
+  align-items: center;
+  justify-items: center;
+  column-gap: 20px;
+  row-gap: 30px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 100%;
+  color: #fff;
+  animation: pulsate 1.2s linear infinite;
+}
+
+@keyframes pulsate {
+  50% {
+    color: #fff;
+    text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+  }
+}
+
+@keyframes visibility {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
